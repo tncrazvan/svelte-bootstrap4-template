@@ -1,0 +1,31 @@
+<script>
+	export let text;
+	export let icon="";
+	export let selected = false;
+	export let submit = false;
+	let cls = "btn-primary";
+	let clk;
+	export {clk as click};
+	export {cls as class};
+</script>
+
+<button on:click={clk} type={submit?"submit":"button"} class="btn {cls}{selected?" selected":""}">
+	{#if icon !== ""}
+		<i class="material-icons adjust">{icon}</i>
+	{/if}
+  	<span class={icon !== ""?"adjust":""}>{text}</span>
+</button>
+
+<style>
+	i.adjust{
+		position: relative;
+		top: 3px;
+	}
+	span.adjust{
+		position: relative;
+		top: -3px;
+	}
+	*:not(.selected){
+		border-color: transparent;
+	}
+</style>
