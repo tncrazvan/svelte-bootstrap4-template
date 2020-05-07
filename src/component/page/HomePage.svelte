@@ -1,20 +1,25 @@
 <script>
+	import Portfolio from './../misc/Portfolio.svelte';
 	import { fly } from 'svelte/transition';
-	import IconButton from '../button/IconButton.svelte';
-	export let location;
-	console.info("location:",location);
-	let visible = true;
-	const toggle=()=>{
-		visible = !visible;
-	}
+	let pages = [];
+	pages.push([
+			{title: "title 1",imageSrc: "/assets/images/java.png",description: "subtitle 1"},
+			{title: "title 1",imageSrc: "/assets/images/java.png",description: "subtitle 1"},
+			{title: "title 1",imageSrc: "/assets/images/java.png",description: "subtitle 1"}
+	]);
+	pages.push([
+			{title: "title 2",imageSrc: "/assets/images/java.png",description: "subtitle 1"},
+			{title: "title 2",imageSrc: "/assets/images/java.png",description: "subtitle 1"},
+			{title: "title 2",imageSrc: "/assets/images/java.png",description: "subtitle 1"}
+	]);
+	pages.push([
+			{title: "title 3",imageSrc: "/assets/images/java.png",description: "subtitle 1"},
+			{title: "title 3",imageSrc: "/assets/images/java.png",description: "subtitle 1"},
+			{title: "title 3",imageSrc: "/assets/images/java.png",description: "subtitle 1"}
+	]);
 </script>
 <div transition:fly={{ x: -100, duration: 200 }} class="root">
-	<div class="col-12 col-sm-10 col-md-7 col-lg-5 col-xl-3">
-		This is the home page, and here's a button!
-		{#if visible}
-			<IconButton click={toggle} text="Hide me!" icon="close"/>
-		{/if}
-	</div>
+	<Portfolio title="My projects" subtitle="Some of my projects" pages={pages} index={0}/>
 </div>
 <style lang="scss">
 	.root{
@@ -25,7 +30,6 @@
 		bottom: 0;
 		display: grid;
 		grid-template-columns: auto;
-		grid-auto-rows: 90vh;
 		align-items: center;
 		justify-items: center;
 		overflow-y: auto;
