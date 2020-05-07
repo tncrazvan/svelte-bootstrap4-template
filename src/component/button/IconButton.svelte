@@ -3,15 +3,17 @@
 	export let icon="";
 	export let selected = false;
 	export let submit = false;
+	let css; export {css as style};
+	let idd; export {idd as id};
 	let cls = "btn-primary";
 	let clk;
 	export {clk as click};
 	export {cls as class};
 </script>
 
-<button on:click={clk} type={submit?"submit":"button"} class="btn {cls}{selected?" selected":""}">
+<button style={css} id={idd} on:click={clk} type={submit?"submit":"button"} class="btn {cls}{selected?" selected":""}">
 	{#if icon !== ""}
-		<i class="material-icons adjust">{icon}</i>
+		<i class="fa fa-{icon}"></i>
 	{/if}
   	<span class={icon !== ""?"adjust":""}>{text}</span>
 </button>

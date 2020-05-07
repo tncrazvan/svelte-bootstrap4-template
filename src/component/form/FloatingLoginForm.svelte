@@ -42,7 +42,7 @@
 					<button on:click={local.submit} class="btn btn-lg btn-primary btn-block text-uppercase">Sign in</button>
 					<hr class="my-4">
           <div class="text-center">
-            <a on:click={local.forgotPassword} class="small" href="#">Forgot password?</a>
+            <span on:click={local.forgotPassword} class="small text-primary">Forgot password?</span>
           </div>
 				</form>
 				</div>

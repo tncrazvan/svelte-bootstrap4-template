@@ -33,7 +33,7 @@
 
 					<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
 					<hr class="my-4">
-					<a class="d-block text-center mt-2 small" href="#">Sign In</a>
+					<span class="d-block text-center mt-2 small text-primary">Sign In</span>
 				</form>
 				</div>
 			</div>
