@@ -31,13 +31,13 @@
 </script>
 
 <div class="alert {cls}" role="alert">
-	<i class="material-icons">info_outline</i>
-  <span>{@html text}</span>
+	<i class="fa fa-info-circle"></i>
+	<span>{@html text}</span>
 </div>
 
 <style>
 	i{
 		position: relative;
-		top: 6px;
+		top: 1px;
 	}
 </style>

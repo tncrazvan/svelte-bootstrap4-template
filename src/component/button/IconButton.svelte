@@ -3,6 +3,7 @@
 	export let icon="";
 	export let selected = false;
 	export let submit = false;
+	export let size = "";
 	let css; export {css as style};
 	let idd; export {idd as id};
 	let cls = "btn-primary";
@@ -11,7 +12,7 @@
 	export {cls as class};
 </script>
 
-<button style={css} id={idd} on:click={clk} type={submit?"submit":"button"} class="btn {cls}{selected?" selected":""}">
+<button style={css} id={idd} on:click={clk} type={submit?"submit":"button"} class="btn{cls}{selected?" selected":""}{size==="large"?"btn-lg":size==="small"?"btn-sm":""}">
 	{#if icon !== ""}
 		<i class="fa fa-{icon}"></i>
 	{/if}
