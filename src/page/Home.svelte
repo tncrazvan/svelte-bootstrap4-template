@@ -1,9 +1,9 @@
 <script>
 	import {onMount} from 'svelte';
-	import PrintableDocument from './../component/printable/PrintableDocument.svelte';
-	import PrintableDocumentRoot from './../component/printable/PrintableDocumentRoot.svelte';
-	import NewPage from './../component/printable/NewPage.svelte';
-	import IconButton from './../component/button/IconButton.svelte';
+	import PrintableDocument from './../shared/component/printable/PrintableDocument.svelte';
+	import PrintableDocumentRoot from './../shared/component/printable/PrintableDocumentRoot.svelte';
+	import NewPage from './../shared/component/printable/NewPage.svelte';
+	import IconButton from './../shared/component/button/IconButton.svelte';
 	import { fly } from 'svelte/transition';
 	let doc;
 </script>

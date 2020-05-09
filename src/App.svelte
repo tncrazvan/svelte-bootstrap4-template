@@ -1,9 +1,9 @@
 <script>
-	import Printing from './page/Printing.svelte';
 	import Home from './page/Home.svelte';
-	import SideMenu from './component/menu/SideMenu.svelte';
+	import Printing from './shared/page/Printing.svelte';
+	import SideMenu from './shared/component/menu/SideMenu.svelte';
 	import { Router, Route, navigate } from 'svelte-routing';
-	import {printer} from './store/printer.js';
+	import {printer} from './shared/store/printer.js';
 
 	//jquery
 	//import './libs/jquery/jquery.min.js'; ====> imported directly in index.html
@@ -22,13 +22,15 @@
 	
 
 	//datepicker
-	import './libs/datepicker/datepicker.js';
-	import './libs/datepicker/datepicker.css';
+	import './shared/libs/datepicker/datepicker.js';
+	import './shared/libs/datepicker/datepicker.css';
 
 	//others
-	import './style/fontawesome/css/all.min.css';
-	import './style/extra.css';
-	import './style/printable.css';
+	import './shared/style/fontawesome/css/all.min.css';
+	import './shared/style/extra.css';
+	import './shared/style/printable.css';
+
+	
 	export let url = window.location.pathname;
 	const getSidemenuData=async ()=>{
 		let response = await fetch("/json/sidemenu.json");
