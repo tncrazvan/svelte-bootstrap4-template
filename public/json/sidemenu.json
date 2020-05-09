@@ -1,11 +1,12 @@
 {
+	"enabled": false,
 	"title": "my title",
 	"user": {
-		"image": "${this.image}",
-		"firstname": "${this.firstname}",
-		"lastname": "${this.lastname}",
-		"role": "${this.role}",
-		"status": "${this.status}"
+		"image": "this.image",
+		"firstname": "this.firstname",
+		"lastname": "this.lastname",
+		"role": "this.role",
+		"status": "this.status"
 	},
 	"sections": [
 		{

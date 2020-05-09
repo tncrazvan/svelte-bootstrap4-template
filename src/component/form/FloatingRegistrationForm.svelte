@@ -30,7 +30,7 @@
 				</div>
 				<div class="card-body">
 				<h5 class="card-title text-center">Register</h5>
-				<form class="form-signin">
+				<form class="form-signin" on:submit={e=>{e.preventDefault();check();}}>
           <InputField bind:value={username} type={"text"} label={"Username"}/>
           <InputField bind:value={email} type={"text"} label={"Email address"}/>
           <hr>
@@ -41,7 +41,7 @@
           {#if error !== ""}
           <Alert text={error} level="danger"/>
           {/if}
-					<button on:click={check} class="btn btn-lg btn-primary btn-block text-uppercase">Register</button>
+					<button type="submit" class="btn btn-lg btn-primary btn-block text-uppercase">Register</button>
 					<hr class="my-4">
 					<span on:click={e=>login()} class="d-block text-center mt-2 small text-primary">Login</span>
 				</form>

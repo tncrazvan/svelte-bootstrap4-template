@@ -13,11 +13,11 @@
 			<div class="card card-signin my-5">
 				<div class="card-body">
 				<h5 class="card-title text-center">Login</h5>
-				<form class="form-signin">
+				<form class="form-signin" on:submit={e=>{e.preventDefault();submit({email:email,password:password,rememberMe:rememberMe})}}>
 					<InputField bind:value={email} type={"text"} label={"Email address"}/>
 					<InputField bind:value={password} type={"password"} label={"Password"}/>
 					<Checkbox bind:checked={rememberMe} label={"Remember me"} />
-					<button on:click={e=>submit({email:email,password:password,rememberMe:rememberMe})} class="btn btn-lg btn-primary btn-block text-uppercase">Login</button>
+					<button type="submit" class="btn btn-lg btn-primary btn-block text-uppercase">Login</button>
 					<hr class="my-4">
 					<div class="text-center">
 						<span on:click={e=>forgotPassword(email)} class="small text-primary">Forgot password?</span>

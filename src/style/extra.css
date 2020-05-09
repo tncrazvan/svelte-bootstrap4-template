@@ -7,13 +7,26 @@ html,body{
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	overflow-y: hidden;
 	overflow-x: hidden;
 }
 :root {
 --input-padding-x: 1.5rem;
 --input-padding-y: 0.75rem;
 }
+
+.page{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: grid;
+	grid-template-columns: auto;
+	align-items: center;
+	justify-items: center;
+	overflow-y: auto;
+}
+
 .form-label-group {
 	position: relative;
 	margin-bottom: 1rem;

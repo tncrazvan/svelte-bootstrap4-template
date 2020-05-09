@@ -11,14 +11,8 @@
 		role: "Administration",
 		status: "online",
 	};
-	const PATTERN_VAR = /(?<=\$\{).+(?=\})/g;
 	const getUserData=function(script){
-		const matches = script.match(PATTERN_VAR);
-		if(matches){
-			return new Function("return "+matches[0]).call(userData);
-		}else{
-			return new Function("return "+script).call(userData);
-		}
+		return new Function("return "+script).call(userData);
 	};
 	const getChipType=function(value){
 		switch(value.toLowerCase()){

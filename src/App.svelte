@@ -1,7 +1,9 @@
 <script>
+	import Printing from './page/Printing.svelte';
+	import Home from './page/Home.svelte';
 	import SideMenu from './component/menu/SideMenu.svelte';
-	import HomePage from './component/page/HomePage.svelte';
 	import { Router, Route, navigate } from 'svelte-routing';
+	import {printer} from './store/printer.js';
 
 	//jquery
 	//import './libs/jquery/jquery.min.js'; ====> imported directly in index.html
@@ -26,26 +28,31 @@
 	//others
 	import './style/fontawesome/css/all.min.css';
 	import './style/extra.css';
+	import './style/printable.css';
 	export let url = window.location.pathname;
-	/*const getSidemenuData=async ()=>{
+	const getSidemenuData=async ()=>{
 		let response = await fetch("/json/sidemenu.json");
 		response = await response.json();
 		return response;
 	}
-	let sidemenuData = getSidemenuData();*/
-	let sidemenuData;
+	let sidemenuData = getSidemenuData();
 </script>
 {#if sidemenuData}
 	{#await sidemenuData}
 		<span></span>
 	{:then data}
-		<SideMenu title={data.title} user={data.user} sections={data.sections}/>
+		{#if data.enabled}
+			<SideMenu title={data.title} user={data.user} sections={data.sections}/>
+		{/if}
 	{:catch error}
 		<span></span>
 	{/await}
 {/if}
+{#if !$printer.showing}
 <Router url="{url}">
-	<Route path="/">
-		<HomePage />
-	</Route>
+	<Route path="/" component={Home}/>
+	<Route path="/index.html" component={Home}/>
 </Router>
+{:else}
+	<Printing />
+{/if}

@@ -29,5 +29,5 @@
 	}
 </script>
 <div class="spinner-border {cls}" role="status">
-  <span class="sr-only">Caricamento...</span>
+  <span class="sr-only">Loading...</span>
 </div>
