@@ -1,7 +1,7 @@
 <script>
 	import { Router, Route, navigate } from 'svelte-routing';
 	import Home from './page/Home.svelte';
-	export let url;
+	export let url; //this is your application window.location.pathname
 </script>
 <Router url="{url}">
 	<Route path="/" component={Home}/>
