@@ -8,7 +8,7 @@ import css from 'rollup-plugin-css-only';
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-	input: 'src/main.js',
+	input: 'src/shared/main.js',
 	output: {
 		sourcemap: true,
 		format: 'iife',
