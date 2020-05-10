@@ -29,7 +29,6 @@
 	import './shared/style/fontawesome/css/all.min.css';
 	import './shared/style/extra.css';
 	import './shared/style/printable.css';
-
 	
 	export let url = window.location.pathname;
 	const getSidemenuData=async ()=>{
