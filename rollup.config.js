@@ -8,7 +8,7 @@ import css from 'rollup-plugin-css-only';
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-	input: 'src/shared/main.js',
+	input: 'src/main.js',
 	output: {
 		sourcemap: true,
 		format: 'iife',
@@ -25,7 +25,7 @@ export default {
 				css.write('public/build/bundle.css');
 			}
 		}),
-		css({output:'public/extra.css'}),
+		css({output:'public/build/extra.css'}),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
